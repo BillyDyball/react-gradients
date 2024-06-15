@@ -1,0 +1,7 @@
+# dependencies
+node_modules/
+
+# builds
+output
+dist
+*storybook.log
