@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "rollup": "rollup --config rollup.config.js --bundleConfigAsCjs",
+    "rollup": "npm run clean && rollup --config rollup.config.js --bundleConfigAsCjs",
+    "clean": "rm -rf dist",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -36,6 +37,7 @@
   "homepage": "https://github.com/BillyDyball/react-gradients#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@storybook/addon-essentials": "^8.1.9",
     "@storybook/addon-interactions": "^8.1.9",

@@ -1,5 +1,6 @@
 import typescript from "rollup-plugin-typescript2";
 import * as pkg from "./package.json";
+import terser from "@rollup/plugin-terser";
 
 export default {
   input: "src/index.ts",
@@ -17,5 +18,8 @@ export default {
       sourcemap: true,
     },
   ],
-  plugins: [typescript({ config: "./tsconfig.json" })],
+  plugins: [
+    terser(),
+    typescript({ config: "./tsconfig.json", exclude: ["**/*.stories.*"] }),
+  ],
 };
